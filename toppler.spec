@@ -13,7 +13,7 @@ URL:		http://toppler.sourceforge.net/
 Group:		Games/Arcade
 BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	SDL-devel SDL_mixer-devel zlib-devel
-PreReq:		rpm-helper
+Requires(post):	rpm-helper
 
 %description
 It is an almost complete reimplementation of the old game known as Tower
