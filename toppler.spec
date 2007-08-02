@@ -1,6 +1,5 @@
 %define	name	toppler
-%define rversion 1.1.2
-%define	version	1.1.2a
+%define	version	1.1.3
 %define	release	%mkrel 1
 %define	Summary	Reimplementation of the old game known as Tower Toppler or Nebulous
 
@@ -35,7 +34,7 @@ most of the other creatures just don't care about this. So you must avoid
 them.
 
 %prep
-%setup -q  -n %{name}-%{rversion}
+%setup -q
 
 %build
 export CXXFLAGS="%optflags -U HISCOREDIR -D HISCOREDIR=\\\"%{_localstatedir}/games\\\" -U TOP_DATADIR -D TOP_DATADIR=\\\"%{_gamesdatadir}/%{name}\\\""
