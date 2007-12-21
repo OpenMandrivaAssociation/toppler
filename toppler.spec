@@ -11,6 +11,7 @@ Source0:	http://heanet.dl.sourceforge.net/sourceforge/toppler/%{name}-%{version}
 License:	GPL
 URL:		http://toppler.sourceforge.net/
 Group:		Games/Arcade
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 BuildRequires:	SDL-devel SDL_mixer-devel zlib-devel
 Requires(post):	rpm-helper
 
