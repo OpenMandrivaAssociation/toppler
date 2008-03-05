@@ -1,12 +1,11 @@
 %define	name	toppler
 %define	version	1.1.3
-%define	release	%mkrel 1
 %define	Summary	Reimplementation of the old game known as Tower Toppler or Nebulous
 
 Summary:	%{Summary}
 Name:		%{name}
 Version:	%{version}
-Release:	%{release}
+Release:	%mkrel 2
 Source0:	http://heanet.dl.sourceforge.net/sourceforge/toppler/%{name}-%{version}.tar.bz2
 License:	GPL
 URL:		http://toppler.sourceforge.net/
