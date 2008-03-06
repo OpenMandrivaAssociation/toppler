@@ -38,7 +38,7 @@ them.
 %build
 export CXXFLAGS="%optflags -U HISCOREDIR -D HISCOREDIR=\\\"%{_localstatedir}/games\\\" -U TOP_DATADIR -D TOP_DATADIR=\\\"%{_gamesdatadir}/%{name}\\\""
 %configure2_5x	--bindir=%{_gamesbindir}
-%make
+make
 
 %install
 rm -rf $RPM_BUILD_ROOT
