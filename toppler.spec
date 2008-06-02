@@ -38,13 +38,13 @@ them.
 %patch0 -p1 -b .ocreat
 
 %build
-export CXXFLAGS="%optflags -U HISCOREDIR -D HISCOREDIR=\\\"%{_localstatedir}/games\\\" -U TOP_DATADIR -D TOP_DATADIR=\\\"%{_gamesdatadir}/%{name}\\\""
+export CXXFLAGS="%optflags -U HISCOREDIR -D HISCOREDIR=\\\"%{_localstatedir}/lib/games\\\" -U TOP_DATADIR -D TOP_DATADIR=\\\"%{_gamesdatadir}/%{name}\\\""
 %configure2_5x	--bindir=%{_gamesbindir}
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
-%{makeinstall_std} pkglocalstatedir=%{_localstatedir}/games pkgdatadir=%{_gamesdatadir}/%{name} pkgdocdir=%{_docdir}/%{name}-%{version}
+%{makeinstall_std} pkglocalstatedir=%{_localstatedir}/lib/games pkgdatadir=%{_gamesdatadir}/%{name} pkgdocdir=%{_docdir}/%{name}-%{version}
 
 rm -f $RPM_BUILD_ROOT%{_datadir}/applications/%{name}.desktop
 cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
@@ -58,7 +58,7 @@ Type=Application
 Categories=Game;ArcadeGame;X-MandrivaLinux-MoreApplications-Games-Arcade;
 EOF
 
-chmod a+w $RPM_BUILD_ROOT%{_localstatedir}/games/toppler.hsc
+chmod a+w $RPM_BUILD_ROOT%{_localstatedir}/lib/games/toppler.hsc
 
 %find_lang %{name}
 
@@ -67,7 +67,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %post
 %{update_menus}
-%create_ghostfile %{_localstatedir}/games/toppler.hsc root games 664
+%create_ghostfile %{_localstatedir}/lib/games/toppler.hsc root games 664
 
 %postun
 %{clean_menus}
@@ -75,7 +75,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -f %{name}.lang
 %defattr(-, root, root)
 %doc %{_docdir}/%{name}-%{version}/*
-%attr(664, root, games) %ghost %{_localstatedir}/games/toppler.hsc
+%attr(664, root, games) %ghost %{_localstatedir}/lib/games/toppler.hsc
 %attr(2755, root, games) %{_gamesbindir}/%{name}
 %{_gamesdatadir}/%{name}
 %{_mandir}/man?/%{name}*
