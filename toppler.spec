@@ -66,11 +66,15 @@ chmod a+w $RPM_BUILD_ROOT%{_localstatedir}/lib/games/toppler.hsc
 rm -rf $RPM_BUILD_ROOT
 
 %post
+%if %mdkversion < 200900
 %{update_menus}
+%endif
 %create_ghostfile %{_localstatedir}/lib/games/toppler.hsc root games 664
 
+%if %mdkversion < 200900
 %postun
 %{clean_menus}
+%endif
 
 %files -f %{name}.lang
 %defattr(-, root, root)
