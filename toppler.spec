@@ -5,7 +5,7 @@
 Summary:	%{Summary}
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 3
+Release:	%mkrel 4
 Source0:	http://heanet.dl.sourceforge.net/sourceforge/toppler/%{name}-%{version}.tar.bz2
 Patch0:		toppler-1.1.3-ocreat.patch
 License:	GPL
