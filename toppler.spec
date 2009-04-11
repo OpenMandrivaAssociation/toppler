@@ -8,6 +8,7 @@ Version:	%{version}
 Release:	%mkrel 5
 Source0:	http://heanet.dl.sourceforge.net/sourceforge/toppler/%{name}-%{version}.tar.bz2
 Patch0:		toppler-1.1.3-ocreat.patch
+Patch1:		toppler-1.1.3-fix-str-fmt.patch
 License:	GPL
 URL:		http://toppler.sourceforge.net/
 Group:		Games/Arcade
@@ -36,6 +37,7 @@ them.
 %prep
 %setup -q
 %patch0 -p1 -b .ocreat
+%patch1 -p0 -b .str
 
 %build
 export CXXFLAGS="%optflags -U HISCOREDIR -D HISCOREDIR=\\\"%{_localstatedir}/lib/games\\\" -U TOP_DATADIR -D TOP_DATADIR=\\\"%{_gamesdatadir}/%{name}\\\""
