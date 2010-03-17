@@ -5,7 +5,7 @@
 Summary:	%{Summary}
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 6
+Release:	%mkrel 7
 Source0:	http://heanet.dl.sourceforge.net/sourceforge/toppler/%{name}-%{version}.tar.bz2
 Patch0:		toppler-1.1.3-ocreat.patch
 Patch1:		toppler-1.1.3-fix-str-fmt.patch
