@@ -1,13 +1,12 @@
 %define	name	toppler
-%define	version	1.1.3
+%define	version	1.1.4
 %define	Summary	Reimplementation of the old game known as Tower Toppler or Nebulous
 
 Summary:	%{Summary}
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 7
-Source0:	http://heanet.dl.sourceforge.net/sourceforge/toppler/%{name}-%{version}.tar.bz2
-Patch0:		toppler-1.1.3-ocreat.patch
+Release:	%mkrel 1
+Source0:	http://heanet.dl.sourceforge.net/sourceforge/toppler/%{name}-%{version}.tar.gz
 Patch1:		toppler-1.1.3-fix-str-fmt.patch
 License:	GPL
 URL:		http://toppler.sourceforge.net/
@@ -36,7 +35,6 @@ them.
 
 %prep
 %setup -q
-%patch0 -p1 -b .ocreat
 %patch1 -p0 -b .str
 
 %build
