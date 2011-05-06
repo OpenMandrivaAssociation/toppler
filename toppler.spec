@@ -5,7 +5,7 @@
 Summary:	%{Summary}
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 1
+Release:	%mkrel 2
 Source0:	http://heanet.dl.sourceforge.net/sourceforge/toppler/%{name}-%{version}.tar.gz
 Patch1:		toppler-1.1.3-fix-str-fmt.patch
 License:	GPL
