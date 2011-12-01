@@ -43,11 +43,11 @@ export CXXFLAGS="%optflags -U HISCOREDIR -D HISCOREDIR=\\\"%{_localstatedir}/lib
 make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %{makeinstall_std} pkglocalstatedir=%{_localstatedir}/lib/games pkgdatadir=%{_gamesdatadir}/%{name} pkgdocdir=%{_docdir}/%{name}-%{version}
 
-rm -f $RPM_BUILD_ROOT%{_datadir}/applications/%{name}.desktop
-cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
+rm -f %{buildroot}%{_datadir}/applications/%{name}.desktop
+cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
 Name=Tower Toppler
 Comment=%{Summary}
@@ -58,12 +58,12 @@ Type=Application
 Categories=Game;ArcadeGame;X-MandrivaLinux-MoreApplications-Games-Arcade;
 EOF
 
-chmod a+w $RPM_BUILD_ROOT%{_localstatedir}/lib/games/toppler.hsc
+chmod a+w %{buildroot}%{_localstatedir}/lib/games/toppler.hsc
 
 %find_lang %{name}
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %post
 %if %mdkversion < 200900
