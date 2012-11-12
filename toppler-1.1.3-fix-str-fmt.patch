@@ -1,0 +1,20 @@
+--- decl.cc.str	2009-04-11 21:35:57.000000000 +0200
++++ decl.cc	2009-04-11 21:36:12.000000000 +0200
+@@ -156,7 +156,7 @@
+ #ifndef WIN32
+   // look into actual directory
+   if (dcl_fileexists(name)) {
+-    snprintf(f, len, name);
++    snprintf(f, len, "%s", name);
+     return true;
+   }
+ 
+@@ -165,7 +165,7 @@
+ 
+   snprintf(n, 200, TOP_DATADIR"/%s", name);
+   if (dcl_fileexists(n)) {
+-    snprintf(f, len, n);
++    snprintf(f, len, "%s", n);
+     return true;
+   }
+ 
