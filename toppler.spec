@@ -5,7 +5,7 @@
 Summary:	%{Summary}
 Name:		%{name}
 Version:	%{version}
-Release:	%mkrel 2
+Release:	%mkrel 3
 Source0:	http://heanet.dl.sourceforge.net/sourceforge/toppler/%{name}-%{version}.tar.gz
 Patch1:		toppler-1.1.3-fix-str-fmt.patch
 License:	GPL
@@ -43,11 +43,11 @@ export CXXFLAGS="%optflags -U HISCOREDIR -D HISCOREDIR=\\\"%{_localstatedir}/lib
 make
 
 %install
-rm -rf %{buildroot}
+rm -rf $RPM_BUILD_ROOT
 %{makeinstall_std} pkglocalstatedir=%{_localstatedir}/lib/games pkgdatadir=%{_gamesdatadir}/%{name} pkgdocdir=%{_docdir}/%{name}-%{version}
 
-rm -f %{buildroot}%{_datadir}/applications/%{name}.desktop
-cat > %{buildroot}%{_datadir}/applications/mandriva-%{name}.desktop << EOF
+rm -f $RPM_BUILD_ROOT%{_datadir}/applications/%{name}.desktop
+cat > $RPM_BUILD_ROOT%{_datadir}/applications/mandriva-%{name}.desktop << EOF
 [Desktop Entry]
 Name=Tower Toppler
 Comment=%{Summary}
@@ -58,12 +58,12 @@ Type=Application
 Categories=Game;ArcadeGame;X-MandrivaLinux-MoreApplications-Games-Arcade;
 EOF
 
-chmod a+w %{buildroot}%{_localstatedir}/lib/games/toppler.hsc
+chmod a+w $RPM_BUILD_ROOT%{_localstatedir}/lib/games/toppler.hsc
 
 %find_lang %{name}
 
 %clean
-rm -rf %{buildroot}
+rm -rf $RPM_BUILD_ROOT
 
 %post
 %if %mdkversion < 200900
@@ -86,4 +86,99 @@ rm -rf %{buildroot}
 %{_datadir}/applications/mandriva-%{name}.desktop
 %{_datadir}/pixmaps/%{name}.xpm
 
+
+
+
+%changelog
+* Fri May 06 2011 Oden Eriksson <oeriksson@mandriva.com> 1.1.4-2mdv2011.0
++ Revision: 670722
+- mass rebuild
+
+* Fri Oct 01 2010 Funda Wang <fwang@mandriva.org> 1.1.4-1mdv2011.0
++ Revision: 582219
+- new version 1.1.4
+
+* Wed Mar 17 2010 Oden Eriksson <oeriksson@mandriva.com> 1.1.3-7mdv2010.1
++ Revision: 524232
+- rebuilt for 2010.1
+
+* Thu Sep 03 2009 Christophe Fergeau <cfergeau@mandriva.com> 1.1.3-6mdv2010.0
++ Revision: 427428
+- rebuild
+
+* Sat Apr 11 2009 Funda Wang <fwang@mandriva.org> 1.1.3-5mdv2009.1
++ Revision: 366389
+- fix str fmt
+
+  + Antoine Ginies <aginies@mandriva.com>
+    - rebuild
+
+* Thu Aug 07 2008 Thierry Vignaud <tv@mandriva.org> 1.1.3-4mdv2009.0
++ Revision: 265767
+- rebuild early 2009.0 package (before pixel changes)
+
+  + Pixel <pixel@mandriva.com>
+    - rpm filetriggers deprecates update_menus/update_scrollkeeper/update_mime_database/update_icon_cache/update_desktop_database/post_install_gconf_schemas
+    - adapt to %%_localstatedir now being /var instead of /var/lib (#22312)
+
+* Mon Jun 02 2008 Olivier Blin <oblin@mandriva.com> 1.1.3-3mdv2009.0
++ Revision: 214227
+- fix build with latest glibc (open with O_CREAT needs a third arg)
+
+* Thu Mar 06 2008 Oden Eriksson <oeriksson@mandriva.com> 1.1.3-2mdv2008.1
++ Revision: 180339
+- fix build
+- rebuild
+
+  + Olivier Blin <oblin@mandriva.com>
+    - restore BuildRoot
+
+  + Thierry Vignaud <tv@mandriva.org>
+    - kill re-definition of %%buildroot on Pixel's request
+    - kill desktop-file-validate's 'warning: key "Encoding" in group "Desktop Entry" is deprecated'
+
+* Thu Aug 02 2007 Olivier Blin <oblin@mandriva.com> 1.1.3-1mdv2008.0
++ Revision: 58091
+- use requires(post) instead of prereq
+- 1.1.3
+
+
+* Fri Nov 17 2006 Olivier Blin <oblin@mandriva.com> 1.1.2a-1mdv2007.0
++ Revision: 85258
+- really pass directories, using CXXFLAGS
+- fix top datadir
+- xdg menu
+- add desktop file and pixmap
+- fix doc installation
+- replace dir patches with cflags and make options
+- 1.1.2a
+- bunzip2 patches
+- Import toppler
+
+* Tue May 09 2006 Stefan van der Eijk <stefan@eijk.nu> 1.1.1-2mdk
+- rebuild for sparc
+
+* Tue Dec 21 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 1.1.1-1mdk
+- 1.1.1
+
+* Tue Dec 14 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 1.1.0-1mdk
+- 1.1.0
+
+* Thu Aug 19 2004 Laurent MONTEL <lmontel@mandrakesoft.com> 1.0.6-3mdk
+- Rebuild with new menu
+
+* Sat Jun 05 2004 <lmontel@n2.mandrakesoft.com> 1.0.6-2mdk
+- Rebuild
+
+* Sun Feb 08 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 1.0.6-1mdk
+- 1.0.6
+
+* Mon Jan 26 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 1.0.5-1mdk
+- 1.0.5
+
+* Sun Jan 18 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 1.0.4-1mdk
+- 1.0.4
+- fix buildrequires (lib64..)
+- add locales
+- fix path to games data (P1)
 
