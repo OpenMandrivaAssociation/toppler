@@ -4,9 +4,9 @@
 
 Summary:	%{Summary}
 Name:		%{name}
-Version:	%{version}
-Release:	%mkrel 3
-Source0:	http://heanet.dl.sourceforge.net/sourceforge/toppler/%{name}-%{version}.tar.gz
+Version:	1.1.6
+Release:	1
+Source0:	https://sourceforge.net/projects/toppler/files/toppler/1.1.6/%{name}-%{version}.tar.gz
 Patch1:		toppler-1.1.3-fix-str-fmt.patch
 License:	GPL
 URL:		http://toppler.sourceforge.net/
@@ -181,4 +181,5 @@ rm -rf $RPM_BUILD_ROOT
 - fix buildrequires (lib64..)
 - add locales
 - fix path to games data (P1)
+
 

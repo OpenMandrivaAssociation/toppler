@@ -1,2 +1,4 @@
+removed_sources:
+  toppler-1.1.4.tar.gz: 153d81ded899a8c5390c3f569e8be96ae90a36c7
 sources:
-  "toppler-1.1.4.tar.gz": 153d81ded899a8c5390c3f569e8be96ae90a36c7
+  toppler-1.1.6.tar.gz: 9f3554a77fb3d6c11be3956b9bd84a31cae1956e
