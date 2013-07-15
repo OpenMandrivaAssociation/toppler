@@ -1,12 +1,14 @@
 Summary:	Reimplementation of the old game known as Tower Toppler or Nebulous
 Name:		toppler
 Version:	1.1.6
-Release:	1
+Release:	2
 Source0:	https://sourceforge.net/projects/toppler/files/toppler/1.1.6/%{name}-%{version}.tar.gz
 License:	GPL
 URL:		http://toppler.sourceforge.net/
 Group:		Games/Arcade
-BuildRequires:	SDL-devel SDL_mixer-devel zlib-devel
+BuildRequires:	pkgconfig(sdl)
+BuildRequires:	pkgconfig(SDL_mixer)
+BuildRequires:	pkgconfig(zlib)
 Requires(post):	rpm-helper
 
 %description
