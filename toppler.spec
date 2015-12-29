@@ -1,3 +1,6 @@
+%define _disable_rebuild_configure 1
+%define _disable_lto 1
+
 Summary:	Reimplementation of the old game known as Tower Toppler or Nebulous
 Name:		toppler
 Version:	1.1.6
