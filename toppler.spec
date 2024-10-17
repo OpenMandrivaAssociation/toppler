@@ -7,7 +7,7 @@ Version:	1.1.6
 Release:	13
 Source0:	https://sourceforge.net/projects/toppler/files/toppler/1.1.6/%{name}-%{version}.tar.gz
 License:	GPL
-URL:		http://toppler.sourceforge.net/
+URL:		https://toppler.sourceforge.net/
 Group:		Games/Arcade
 BuildRequires:	pkgconfig(sdl)
 BuildRequires:	pkgconfig(SDL_mixer)
