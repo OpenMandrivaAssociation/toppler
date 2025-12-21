@@ -9,6 +9,11 @@ Source0:	https://sourceforge.net/projects/toppler/files/toppler/1.1.6/%{name}-%{
 License:	GPL
 URL:		https://toppler.sourceforge.net/
 Group:		Games/Arcade
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 BuildRequires:	pkgconfig(sdl)
 BuildRequires:	pkgconfig(SDL_mixer)
 BuildRequires:	pkgconfig(zlib)
